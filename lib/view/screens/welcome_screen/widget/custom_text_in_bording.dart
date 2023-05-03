@@ -15,12 +15,13 @@ class CustomTextInBording extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(2),
+      width: 300.w,
+      height: 130.h,
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(title, style: StylesApp.textStyle1Bold24),
+            child: Text(title, style: StylesApp.textStyle1Bold22),
           ),
           SizedBox(height: 10.h),
           Container(

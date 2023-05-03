@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/bloc_test_app/app_bloc.dart';
-import 'package:udemy/view/screens/welcome_screen/bloc/welcome_bloc.dart';
+import 'bloc_test_app/app_bloc.dart';
+import 'bloc_test_app/app_event.dart';
+import 'bloc_test_app/app_state.dart';
+import 'view/screens/sign_in_screen/screen/sign_in.dart';
+import 'view/screens/welcome_screen/bloc _welcome/welcome_bloc.dart';
 import 'view/screens/welcome_screen/screen/welcome_page.dart';
 
 void main() {
@@ -11,31 +14,44 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => WelcomeBloc(),
-        child: ScreenUtilInit(
-          builder: (context, child) => const MaterialApp(
-            home: WelcomeScreen(),
-          ),
-        ));
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (contex) => WelcomeBloc(),
+        ),
+        BlocProvider(
+          create: (contex) => AppBlocs(),
+        )
+      ],
+      child: ScreenUtilInit(
+          builder: (context, child) => MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeData(
+                      appBarTheme: const AppBarTheme(
+                          elevation: 0, backgroundColor: Colors.white)),
+                  home: const SignInScreen(),
+                  routes: {
+                    // "myHomePage": (context) => const SignInScreen(),
+                    "signIn": (context) => const SignInScreen(),
+                  })),
+    );
   }
 }
+// ScreenUtilInit(
 
 // class MyHomePage extends StatelessWidget {
-//   const MyHomePage({super.key, required this.title});
+//   const MyHomePage({super.key, this.title});
 
-//   final String title;
+//   final String? title;
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //         appBar: AppBar(
-//           title: Text(title),
-//         ),
+//             // title: Text(title),
+//             ),
 //         body: Center(
 //           child: BlocBuilder<AppBlocs, AppState>(
 //             builder: (context, state) {
@@ -58,12 +74,14 @@ class MyApp extends StatelessWidget {
 //           mainAxisAlignment: MainAxisAlignment.spaceAround,
 //           children: [
 //             FloatingActionButton(
+//               heroTag: 'gi 1',
 //               onPressed: () =>
 //                   BlocProvider.of<AppBlocs>(context).add(Increement()),
 //               tooltip: 'Increment',
 //               child: const Icon(Icons.add),
 //             ),
 //             FloatingActionButton(
+//               heroTag: 'gi 1331',
 //               onPressed: () =>
 //                   BlocProvider.of<AppBlocs>(context).add(Decreement()),
 //               tooltip: 'decrement',

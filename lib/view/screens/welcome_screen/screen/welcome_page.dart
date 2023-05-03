@@ -1,9 +1,12 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../bloc/welcome_bloc.dart';
-import '../bloc/welcome_state.dart';
+import 'package:udemy/view/screens/welcome_screen/widget/custom_bottom_InBoroding.dart';
+
+import '../bloc _welcome/welcome_bloc.dart';
+import '../bloc _welcome/welcome_event.dart';
+import '../bloc _welcome/welcome_state.dart';
+import '../widget/custom_dots_indicator.dart';
 import '../widget/custom_page_view.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -14,9 +17,11 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  final PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: BlocBuilder<WelcomeBloc, WelcomeState>(
         builder: (context, state) {
           return Container(
@@ -26,14 +31,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               alignment: Alignment.bottomCenter,
               children: [
                 PageView(
-                  onPageChanged: (index) {},
+                  controller: pageController,
+                  onPageChanged: (index) {
+                    state.page = index;
+                    BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvent());
+                    debugPrint('ondwx============ $index');
+                  },
                   children: [
                     CustomPageView(
                       index: 1,
                       title: 'First See Learning',
                       subTitle:
                           'Forget about  for of paper all knowledge in one learning',
-                      imagePath: '',
+                      imagePath: 'assets/images/reading.png',
                       context: context,
                       nameButtom: 'Next',
                     ),
@@ -42,7 +52,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       title: 'Connect With Everyone',
                       subTitle:
                           'Always Keep in touch with your tutor & friend. let`s get connected!',
-                      imagePath: '',
+                      imagePath: 'assets/images/boy.png',
                       context: context,
                       nameButtom: 'Next',
                     ),
@@ -51,27 +61,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       title: 'Always Fascinated Learning',
                       subTitle:
                           'Any Where . anytime. The time is at youe discretion so study when never want to ',
-                      imagePath: '',
+                      imagePath: 'assets/images/man.png',
                       context: context,
                       nameButtom: 'Get Started',
                     ),
                   ],
                 ),
-                Positioned(
-                  bottom: 70.h,
-                  child: DotsIndicator(
-                    dotsCount: 3,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    decorator: DotsDecorator(
-                      color: Colors.grey,
-                      activeColor: Colors.blue[900]!,
-                      activeSize: const Size(10.0, 8.0),
-                      activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                  ),
-                ),
+                const CustomDotsIndicator(),
               ],
             ),
           );

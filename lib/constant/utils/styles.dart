@@ -45,15 +45,15 @@ abstract class StylesApp {
   //   fontSize: 16,
   //   fontWeight: FontWeight.bold,
   // );
-  static TextStyle textStyle1Bold24 = TextStyle(
+  static TextStyle textStyle1Bold22 = TextStyle(
     color: Colors.black,
-    fontSize: 24.sp,
+    fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
 
   static TextStyle textStylenormal_14 = TextStyle(
     color: Colors.black.withOpacity(0.5),
-    fontSize: 16.sp,
+    fontSize: 14.sp,
     fontWeight: FontWeight.normal,
   );
   static TextStyle textStyle16 = TextStyle(

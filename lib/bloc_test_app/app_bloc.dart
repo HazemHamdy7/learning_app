@@ -5,6 +5,7 @@ import 'app_state.dart';
 
 class AppBlocs extends Bloc<AppEvent, AppState> {
   AppBlocs() : super(IntiState()) {
+    print("=====App Bloc");
     on<Increement>(
       (event, emit) {
         emit(AppState(counter: state.counter + 1));

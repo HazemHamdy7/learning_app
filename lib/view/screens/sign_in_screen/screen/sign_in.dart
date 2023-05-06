@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/constant/utils/styles.dart';
-
 import '../../../../common/values/colors.dart';
 import '../widget/custom_app_bar.dart';
 import '../widget/custom_button_login.dart';
@@ -31,13 +29,17 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomIconLogin(iconName: "google", onTap: () {}),
-                      CustomIconLogin(iconName: "apple", onTap: () {}),
-                      CustomIconLogin(iconName: "facebook", onTap: () {}),
-                    ],
+                  Container(
+                    margin: EdgeInsets.only(top: 15.h, bottom: 15.h),
+                    padding: EdgeInsets.only(left: 25.h, right: 25.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CustomIconLogin(iconName: "google", onTap: () {}),
+                        CustomIconLogin(iconName: "apple", onTap: () {}),
+                        CustomIconLogin(iconName: "facebook", onTap: () {}),
+                      ],
+                    ),
                   ),
                   const Center(
                     child:
@@ -50,11 +52,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         buildTextUpperFeild('Email'),
+                        SizedBox(height: 8.h),
                         const CustomTextFeild(
                             hintText: 'Enter your email adress',
                             textTyab: "email",
                             iconName: "user"),
                         buildTextUpperFeild('Password'),
+                        SizedBox(height: 8.h),
                         const CustomTextFeild(
                             hintText: 'Enter your Password',
                             textTyab: "password",

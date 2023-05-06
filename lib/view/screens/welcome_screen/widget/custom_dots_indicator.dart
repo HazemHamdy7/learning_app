@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../common/values/colors.dart';
 import '../bloc _welcome/welcome_bloc.dart';
 import '../bloc _welcome/welcome_state.dart';
 
@@ -20,9 +21,10 @@ class CustomDotsIndicator extends StatelessWidget {
             dotsCount: 3,
             mainAxisAlignment: MainAxisAlignment.center,
             decorator: DotsDecorator(
-              color: Colors.grey,
-              activeColor: Colors.blue[900]!,
-              activeSize: const Size(10.0, 8.0),
+              color: AppColors.primaryThreeElementText,
+              activeColor: AppColors.primaryElement,
+              size: const Size.square(8.0),
+              activeSize: const Size(18.0, 8.0),
               activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
               ),

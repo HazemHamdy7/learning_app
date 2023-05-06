@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../common/values/colors.dart';
 import '../../../../constant/utils/styles.dart';
 
 class CustomBottomInBording extends StatelessWidget {
@@ -21,7 +22,7 @@ class CustomBottomInBording extends StatelessWidget {
         width: 325.w,
         height: 50.h,
         decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 23, 86, 180),
+            color: AppColors.primaryElement,
             borderRadius: BorderRadius.all(
               Radius.circular(15.w),
             ),

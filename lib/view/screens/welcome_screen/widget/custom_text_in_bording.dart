@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../common/values/colors.dart';
 import '../../../../constant/utils/styles.dart';
 
 class CustomTextInBording extends StatelessWidget {
@@ -14,21 +15,27 @@ class CustomTextInBording extends StatelessWidget {
   final String subTitle;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 300.w,
       height: 130.h,
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(title, style: StylesApp.textStyle1Bold22),
+            child: Text(title,
+                style: TextStyle(
+                    color: AppColors.primaryText,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold)),
           ),
           SizedBox(height: 10.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40.w),
             child: Text(subTitle,
-                style: StylesApp.textStylenormal_14,
-                overflow: TextOverflow.clip),
+                style: TextStyle(
+                    color: AppColors.primarySecondaryElementText,
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.normal)),
           ),
         ],
       ),

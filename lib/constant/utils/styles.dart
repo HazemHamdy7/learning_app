@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -55,6 +54,11 @@ abstract class StylesApp {
     color: Colors.black.withOpacity(0.5),
     fontSize: 14.sp,
     fontWeight: FontWeight.normal,
+  );
+  static TextStyle textStylenormalTwo_14 = TextStyle(
+    color: Colors.black.withOpacity(0.7),
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
   );
   static TextStyle textStyle16 = TextStyle(
     color: Colors.white,

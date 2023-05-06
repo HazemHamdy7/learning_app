@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "898410760424",
+    "project_id": "ulearing-app-6c3ba",
+    "storage_bucket": "ulearing-app-6c3ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898410760424:android:ad178dbe3c1075ddd6615d",
+        "android_client_info": {
+          "package_name": "com.example.udemy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898410760424-n592ouueq6dti4mt89gajt5m4atldo9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADvcCop8T2sUee1HIb-_2JF2Hh-rzM4xg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898410760424-n592ouueq6dti4mt89gajt5m4atldo9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

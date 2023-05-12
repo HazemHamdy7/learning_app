@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:udemy/common/widgets/flutter_toast.dart';
 import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
 
 class SignInController {
@@ -17,10 +18,17 @@ class SignInController {
         String emailAddress = state.email;
         String password = state.password;
         if (emailAddress.isEmpty) {
-          //?
+          debugPrint("=============email empty====================");
+          toastInfo(msg: "You need to fill email addresss");
         }
+        // else {
+        //   debugPrint("email is============= $emailAddress");
+        // }
         if (password.isEmpty) {
-          //?
+          toastInfo(msg: "You need to fill password");
+          return;
+
+          //   debugPrint("================password is Empty===============");
         }
         try {
           final credential =
@@ -29,23 +37,48 @@ class SignInController {
             password: password,
           );
           if (credential.user == null) {
-            //?
+            toastInfo(msg: "You dont exist");
+            return;
+
+            // debugPrint("============user does not exist=================");
           }
           if (!credential.user!.emailVerified) {
-            //?
+            toastInfo(msg: "You need to verify your email account");
+            return;
+
+            // debugPrint("=================== not verified ================");
           }
           var user = credential.user;
           if (user != null) {
-            // ? we got verified user from firebase
+            debugPrint("====================== USER EXISTS =============");
           } else {
+            toastInfo(msg: "Currently you are not user of this app");
+            return;
+
+            // debugPrint("===================== no user ==================");
             //? we have error getting user from firebase
           }
-        } catch (e) {
-          //?
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-fount') {
+            toastInfo(msg: "No user found for that email");
+            return;
+
+            // debugPrint(
+            //     "==============No user found for that email .=========== ");
+          } else if (e.code == ' worng-password') {
+            toastInfo(msg: "wrong password provided for that user");
+            return;
+
+            // debugPrint(
+            //     "=================wrong password provided for that user ===================. ");
+          } else if (e.code == 'invalid - email') {
+            toastInfo(msg: "Your email format is wrong");
+            return;
+          }
         }
       }
     } catch (e) {
-      //?
+      debugPrint(e.toString());
     }
   }
 }

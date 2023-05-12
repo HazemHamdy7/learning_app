@@ -9,13 +9,15 @@ class CustomButtonLogin extends StatelessWidget {
     Key? key,
     required this.buttonName,
     this.buttonType,
+    this.func,
   }) : super(key: key);
   final String buttonName;
   final String? buttonType;
+  final void Function()? func;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: func,
       child: Container(
         width: 325.w,
         height: 50.h,

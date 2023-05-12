@@ -8,16 +8,16 @@ class UserNameEvent extends RegisterEvent {
   UserNameEvent(this.userName);
 }
 
-class EmailEvent extends RegisterEvent {
+class EmailEventR extends RegisterEvent {
   final String email;
 
-  EmailEvent(this.email);
+  EmailEventR(this.email);
 }
 
-class PasswordEvent extends RegisterEvent {
+class PasswordEventR extends RegisterEvent {
   final String password;
 
-  PasswordEvent(this.password);
+  PasswordEventR(this.password);
 }
 
 class RePasswordEvent extends RegisterEvent {

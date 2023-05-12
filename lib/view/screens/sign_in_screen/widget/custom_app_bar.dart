@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../common/values/colors.dart';
 
-AppBar buildAppBar() {
+AppBar buildAppBar(
+  String text,
+) {
   return AppBar(
       elevation: 0,
       bottom: PreferredSize(
@@ -15,12 +17,14 @@ AppBar buildAppBar() {
       ),
       backgroundColor: AppColors.primarySecondaryBackground,
       title: Center(
-        child: Text(
-          "Log In",
-          style: TextStyle(
-              color: AppColors.primaryText,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.normal),
+        child: Align(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: AppColors.primaryText,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold),
+          ),
         ),
       ));
 }

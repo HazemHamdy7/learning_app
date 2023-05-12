@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:udemy/common/widgets/flutter_toast.dart';
-import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
+
+import '../../../common/widgets/flutter_toast.dart';
+import 'bloc/signin_bloc.dart';
 
 class SignInController {
   final BuildContext context;

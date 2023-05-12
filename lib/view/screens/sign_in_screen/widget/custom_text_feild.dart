@@ -55,7 +55,7 @@ class CustomTextFeild extends StatelessWidget {
                     hintStyle: const TextStyle(
                         color: AppColors.primarySecondaryElementText)),
                 style: TextStyle(
-                  color: AppColors.primaryText,
+                  color: Colors.black,
                   fontFamily: "Avenir",
                   fontWeight: FontWeight.normal,
                   fontSize: 14.sp,
@@ -76,7 +76,7 @@ class CustomTextFeild extends StatelessWidget {
 
 Widget buildTextUpperFeild(String text) {
   return Container(
-      margin: EdgeInsets.only(top: 20.h),
+      margin: EdgeInsets.only(top: 2.h),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         CustomText(text: text),
       ]));

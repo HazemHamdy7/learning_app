@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
-import 'package:udemy/view/screens/sign_in_screen/bloc/signin_event.dart';
-import 'package:udemy/view/screens/sign_in_screen/bloc/signin_state.dart';
-import 'package:udemy/view/screens/sign_in_screen/sign_in_controller.dart';
+import '../bloc/signin_bloc.dart';
+import '../bloc/signin_event.dart';
+import '../bloc/signin_state.dart';
+import '../sign_in_controller.dart';
 import '../../../../common/values/colors.dart';
 import '../widget/custom_app_bar.dart';
 import '../widget/custom_button_login.dart';
@@ -29,7 +29,9 @@ class _SignInScreenState extends State<SignInScreen> {
           child: SafeArea(
             child: Scaffold(
               backgroundColor: Colors.white,
-              appBar: buildAppBar(),
+              appBar: buildAppBar(
+                "Log In",
+              ),
               body: SingleChildScrollView(
                 child: Container(
                   margin: EdgeInsets.only(top: 30.h, bottom: 20.h),
@@ -104,7 +106,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                             CustomButtonLogin(
                               func: () {
-                                print("register button");
+                                Navigator.of(context).pushNamed('register');
                               },
                               buttonName: 'Register',
                               buttonType: 'register',

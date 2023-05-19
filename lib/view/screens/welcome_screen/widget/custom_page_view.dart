@@ -50,7 +50,7 @@ class CustomPageView extends StatelessWidget {
             }
             {
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("signIn", (route) => false);
+                  .pushNamedAndRemoveUntil("/sign_in", (route) => false);
             }
           },
         ),

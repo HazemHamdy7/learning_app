@@ -1,8 +1,8 @@
-class AppState {
-  int counter;
-  AppState({required this.counter});
-}
+// class AppState {
+//   int counter;
+//   AppState({required this.counter});
+// }
 
-class IntiState extends AppState {
-  IntiState() : super(counter: 0);
-}
+// class IntiState extends AppState {
+//   IntiState() : super(counter: 0);
+// }

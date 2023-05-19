@@ -98,8 +98,6 @@ class _SignInScreenState extends State<SignInScreen> {
                               func: () {
                                 SignInController(context: context)
                                     .handleSignIn("email");
-                                print(
-                                    "=======*********=====Login button=======*********=====");
                               },
                               buttonName: 'Log in',
                               buttonType: 'login',

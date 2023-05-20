@@ -11,4 +11,11 @@ class AssetsData {
   static const play = 'assets/icons/play-circle1.png';
   static const chat = 'assets/icons/message-circle.png';
   static const profile = 'assets/icons/person2.png';
+
+  //? Home page
+  static const menu = 'assets/icons/menu.png';
+  static const person = 'assets/icons/person.png';
+  // static const search = 'assets/icons/search2.png';
+  // static const search = 'assets/icons/search2.png';
+  // static const search = 'assets/icons/search2.png';
 }

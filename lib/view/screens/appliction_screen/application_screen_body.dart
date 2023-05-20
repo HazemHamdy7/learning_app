@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../common/values/colors.dart';
-import '../bloc/app_bloc.dart';
-import '../bloc/app_event.dart';
-import '../bloc/app_state.dart';
-import '../widget/application_widget.dart';
+import '../../../common/values/colors.dart';
+import 'bloc/app_bloc.dart';
+import 'bloc/app_event.dart';
+import 'bloc/app_state.dart';
+import 'widget_Appliction/application_widget.dart';
 
 class ApplicationBody extends StatefulWidget {
   const ApplicationBody({super.key});

@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/view/screens/appliction_screen/screen/application_screen_body.dart';
+import 'package:udemy/view/screens/appliction_screen/application_screen_body.dart';
 import 'package:udemy/view/screens/welcome_screen/screen/welcome_page.dart';
 import 'common/routes/pages.dart';
 import 'common/values/colors.dart';
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                         iconTheme: IconThemeData(color: AppColors.primaryText),
                         elevation: 0,
                         backgroundColor: Colors.white)),
-                home: const WelcomeScreen(),
+                home: const ApplicationBody(),
                 //onGenerateRoute: AppPages.generateRouteSetting,
                 routes: {
                   "signIn": (context) => const SignInScreen(),

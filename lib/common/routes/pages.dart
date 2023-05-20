@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:udemy/common/routes/routes.dart';
-import 'package:udemy/view/screens/appliction_screen/screen/application_screen_body.dart';
+import 'package:udemy/view/screens/appliction_screen/application_screen_body.dart';
 import 'package:udemy/view/screens/register_screen/bloc/register_bloc.dart';
 import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
 import 'package:udemy/view/screens/sign_in_screen/screen/sign_in.dart';

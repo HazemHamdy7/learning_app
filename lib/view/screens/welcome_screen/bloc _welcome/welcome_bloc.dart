@@ -6,7 +6,7 @@ class WelcomeBloc extends Bloc<WelcomeEvent, WelcomeState> {
   WelcomeBloc() : super(WelcomeState()) {
     on<WelcomeEvent>(
       (event, emit) {
-        print("=====Welcom Bloc");
+        // print("=====Welcom Bloc");
         emit(WelcomeState(page: state.page));
       },
     );

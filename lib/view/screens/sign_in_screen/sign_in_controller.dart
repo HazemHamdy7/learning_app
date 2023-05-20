@@ -46,14 +46,13 @@ class SignInController {
           if (!credential.user!.emailVerified) {
             toastInfo(msg: "You need to verify your email account");
             return;
-
-            // debugPrint("=================== not verified ================");
           }
           var user = credential.user;
           if (user != null) {
             debugPrint("=============== USER EXISTS =============");
+            // ignore: use_build_context_synchronously
             Navigator.of(context)
-                .pushNamedAndRemoveUntil("/register", (route) => false);
+                .pushNamedAndRemoveUntil("register", (route) => false);
           } else {
             toastInfo(msg: "Currently you are not user of this app");
             return;

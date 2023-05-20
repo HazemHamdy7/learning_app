@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../common/values/colors.dart';
@@ -20,7 +21,10 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Home',
     icon: SizedBox(
-        width: 15.w, height: 15.h, child: Image.asset(AssetsData.home)),
+      width: 15.w,
+      height: 15.h,
+      child: Image.asset(AssetsData.home),
+    ),
     activeIcon: Image.asset(
       AssetsData.home,
       color: AppColors.primaryElement,

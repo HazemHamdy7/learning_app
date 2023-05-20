@@ -1,6 +1,11 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy/constant/utils/assets.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_bloc.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_event.dart';
+import 'package:udemy/view/screens/home/bloc_home/home_page_state.dart';
 
 import '../../../../../../common/values/colors.dart';
 
@@ -14,10 +19,7 @@ AppBar buildAppBarInHomePage() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 15.w,
-            height: 12.w,
-            child: Image.asset(AssetsData.menu),
-          ),
+              width: 15.w, height: 12.w, child: Image.asset(AssetsData.menu)),
           GestureDetector(
             onTap: () {},
             child: Container(
@@ -52,6 +54,11 @@ Widget homePageText(String text,
 }
 
 Widget buildTextFieldSearch() {
+  OutlineInputBorder outLineInputBorder() {
+    return const OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.transparent));
+  }
+
   return Row(
     children: [
       Container(
@@ -112,7 +119,53 @@ Widget buildTextFieldSearch() {
   );
 }
 
-OutlineInputBorder outLineInputBorder() {
-  return const OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.transparent));
+silderView(BuildContext context, HomePageState state) {
+  return Column(
+    children: [
+      Container(
+        margin: EdgeInsets.only(top: 20.h),
+        width: 350.w,
+        height: 160.h,
+        child: PageView(
+          onPageChanged: (value) {
+            context.read<HomePageBlocs>().add(HomePageDots(value));
+          },
+          children: [
+            _sildersContainer(path: AssetsData.artView),
+            _sildersContainer(path: AssetsData.image1),
+            _sildersContainer(path: AssetsData.image2),
+          ],
+        ),
+      ),
+      Container(
+        child: DotsIndicator(
+          dotsCount: 3,
+          position: 1,
+          decorator: DotsDecorator(
+              color: AppColors.primaryThreeElementText,
+              size: const Size.square(5.0),
+              activeSize: const Size(17.0, 5.0),
+              activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0),
+              )),
+        ),
+      )
+    ],
+  );
+}
+
+Widget _sildersContainer({
+  required String path,
+}) {
+  return Container(
+    width: 325.w,
+    height: 160.h,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(20.h)),
+      image: DecorationImage(
+        fit: BoxFit.fill,
+        image: AssetImage(path),
+      ),
+    ),
+  );
 }

@@ -16,6 +16,9 @@ class AssetsData {
   static const menu = 'assets/icons/menu.png';
   static const person = 'assets/icons/person.png';
   static const options = 'assets/icons/options.png';
-  // static const search = 'assets/icons/search2.png';
-  // static const search = 'assets/icons/search2.png';
+  static const art = 'assets/icons/art.png';
+  // Grid views in home page
+  static const artView = 'assets/icons/art.png';
+  static const image1 = 'assets/icons/Image1.png';
+  static const image2 = 'assets/icons/Image2.png';
 }

@@ -96,6 +96,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             SizedBox(height: 70.h),
                             CustomButtonLogin(
                               func: () {
+                                //   Navigator.of(context).pushNamed('ApplicationHome');
                                 SignInController(context: context)
                                     .handleSignIn("email");
                               },

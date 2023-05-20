@@ -3,9 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy/common/values/colors.dart';
 
-import '../../sign_in_screen/bloc/signin_bloc.dart';
-import '../../sign_in_screen/bloc/signin_event.dart';
-import '../../sign_in_screen/sign_in_controller.dart';
 import '../../sign_in_screen/widget/custom_app_bar.dart';
 import '../../sign_in_screen/widget/custom_button_login.dart';
 import '../../sign_in_screen/widget/custom_text.dart';

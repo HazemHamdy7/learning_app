@@ -29,7 +29,7 @@ class _ApplicationBodyState extends State<ApplicationBody> {
               body: buildPage(state.index),
               bottomNavigationBar: Container(
                 width: 375.w,
-                height: 58.h,
+                height: 63.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20.h),

@@ -8,8 +8,8 @@ class Global {
 
   @override
   static Future init() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
+    // WidgetsFlutterBinding.ensureInitialized();
+    // await Firebase.initializeApp();
     storageService = await StorageService().init();
   }
 }

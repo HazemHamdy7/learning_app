@@ -8,6 +8,7 @@ import 'package:udemy/view/screens/sign_in_screen/screen/sign_in.dart';
 import 'package:udemy/view/screens/welcome_screen/bloc%20_welcome/welcome_bloc.dart';
 import 'package:udemy/view/screens/welcome_screen/screen/welcome_page.dart';
 
+import '../../global.dart';
 import '../../view/screens/appliction_screen/bloc/app_bloc.dart';
 import '../../view/screens/register_screen/screens/register_screen_body.dart';
 import 'names.dart';
@@ -56,17 +57,27 @@ class AppPages {
     return blocProviders;
   }
 
-  static MaterialPageRoute GenerateRouteSetting(RouteSettings settings) {
+  static MaterialPageRoute generateRouteSetting(RouteSettings settings) {
     if (settings.name != null) {
       //! chack for route name maching when navigating dets triggered
       var result = routes().where((element) => element.route == settings.name);
       if (result.isEmpty) {
-        print("============ Valid============ ${settings.name}");
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+
+        if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+           bool isLogIn = Global.storageService.getIsLogIn();
+           if(isLogIn){
+                 return MaterialPageRoute(
+              builder: (_) => const ApplicationBody(), settings: settings);
+           }
+          return MaterialPageRoute(
+              builder: (_) => const SignInScreen(), settings: settings);
+        }
         return MaterialPageRoute(
             builder: (_) => result.first.page, settings: settings);
       }
     }
-    print(" ===========inValid============== ${settings.name}");
+
     return MaterialPageRoute(
         builder: (_) => const SignInScreen(), settings: settings);
   }

@@ -39,8 +39,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 15.h, bottom: 15.h),
-                        padding: EdgeInsets.only(left: 25.h, right: 25.h),
+                        margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
+                        padding: EdgeInsets.only(left: 50.h, right: 50.h),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -93,7 +93,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 decorationColor: AppColors.primaryText,
                               ),
                             ),
-                            SizedBox(height: 15.h),
+                            SizedBox(height: 70.h),
                             CustomButtonLogin(
                               func: () {
                                 SignInController(context: context)

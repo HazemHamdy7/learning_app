@@ -18,7 +18,7 @@ class CustomBottomInBording extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.only(top: 100.h, left: 25.w, right: 25.w),
+        margin: EdgeInsets.only(top: 200.h, left: 25.w, right: 10.w),
         width: 325.w,
         height: 50.h,
         decoration: BoxDecoration(

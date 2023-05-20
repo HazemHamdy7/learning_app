@@ -13,28 +13,31 @@ class CustomTextInBording extends StatelessWidget {
   }) : super(key: key);
   final String title;
   final String subTitle;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300.w,
+      width: 350.w,
       height: 130.h,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(title,
                 style: TextStyle(
                     color: AppColors.primaryText,
-                    fontSize: 20.sp,
+                    fontSize: 25.sp,
                     fontWeight: FontWeight.bold)),
           ),
           SizedBox(height: 10.h),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 40.w),
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: 50.w),
             child: Text(subTitle,
                 style: TextStyle(
                     color: AppColors.primarySecondaryElementText,
-                    fontSize: 15.sp,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.normal)),
           ),
         ],

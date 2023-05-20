@@ -25,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: BlocBuilder<WelcomeBloc, WelcomeState>(
         builder: (context, state) {
           return Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             width: 375.w,
             child: Stack(
               alignment: Alignment.bottomCenter,

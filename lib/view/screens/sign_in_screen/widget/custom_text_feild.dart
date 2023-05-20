@@ -1,11 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
 
 import '../../../../common/values/colors.dart';
-import '../bloc/signin_event.dart';
 import 'custom_text.dart';
 
 // ignore: must_be_immutable
@@ -13,14 +10,14 @@ class CustomTextFeild extends StatelessWidget {
   CustomTextFeild({
     Key? key,
     required this.hintText,
-    required this.func,
-    required this.iconName,
-    required this.textTyab,
+    this.iconName,
+    this.textTyab,
+    this.func,
   }) : super(key: key);
   final String hintText;
-  final String iconName;
+  final String? iconName;
   void Function(String)? onChanged;
-  final String textTyab;
+  final String? textTyab;
   final void Function(String value)? func;
 
   @override

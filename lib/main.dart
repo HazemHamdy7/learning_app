@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
           // ],
           AppBlocProviders.allBlocProviders,
       child: ScreenUtilInit(
+          designSize: const Size(402, 812),
           builder: (context, child) => MaterialApp(
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
                         iconTheme: IconThemeData(color: AppColors.primaryText),
                         elevation: 0,
                         backgroundColor: Colors.white)),
-                home: const ApplicationBody(),
+                home: const WelcomeScreen(),
                 //onGenerateRoute: AppPages.generateRouteSetting,
                 routes: {
                   "signIn": (context) => const SignInScreen(),

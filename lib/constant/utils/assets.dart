@@ -15,7 +15,7 @@ class AssetsData {
   //? Home page
   static const menu = 'assets/icons/menu.png';
   static const person = 'assets/icons/person.png';
-  // static const search = 'assets/icons/search2.png';
+  static const options = 'assets/icons/options.png';
   // static const search = 'assets/icons/search2.png';
   // static const search = 'assets/icons/search2.png';
 }

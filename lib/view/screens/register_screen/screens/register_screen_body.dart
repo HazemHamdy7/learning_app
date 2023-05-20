@@ -42,8 +42,8 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         text: 'Enter your details blow & free sign up'),
                   ),
                   Container(
-                    // margin: EdgeInsets.only(top: 10.h),
-                    padding: EdgeInsets.symmetric(horizontal: 25.w),
+                    margin: EdgeInsets.only(top: 60.h),
+                    padding: EdgeInsets.symmetric(horizontal: 30.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

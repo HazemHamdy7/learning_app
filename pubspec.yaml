@@ -38,6 +38,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   flutter_screenutil: ^5.7.0
   fluttertoast: ^8.2.1
+  google_sign_in: ^6.1.0
   intl: ^0.18.1
   shared_preferences: ^2.1.1
 

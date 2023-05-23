@@ -169,3 +169,77 @@ Widget _sildersContainer({
     ),
   );
 }
+
+// menu view for showing item
+Widget menuView() {
+  return Column(
+    children: [
+      Container(
+        width: 325.w,
+        margin: EdgeInsets.only(top: 15.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _reuseableText("Choose your course"),
+            GestureDetector(
+              child: _reuseableText("See all",
+                  color: AppColors.primaryThreeElementText, fontSize: 14),
+            ),
+          ],
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.only(top: 20.w),
+        child: Row(
+          children: [
+            _reuseableMenuText("All"),
+            _reuseableMenuText("Pooular",
+                textColor: AppColors.primaryThreeElementText,
+                backGroundColor: Colors.white),
+            _reuseableMenuText("Newest",
+                textColor: AppColors.primaryThreeElementText,
+                backGroundColor: Colors.white),
+          ],
+        ),
+      )
+    ],
+  );
+}
+
+Widget _reuseableText(
+  String text, {
+  Color color = AppColors.primaryText,
+  int fontSize = 16,
+  FontWeight fontWeight = FontWeight.bold,
+}) {
+  return Container(
+    child: Text(
+      text,
+      style: TextStyle(
+          color: color, fontSize: fontSize.sp, fontWeight: fontWeight),
+    ),
+  );
+}
+
+// for menu buttons
+Widget _reuseableMenuText(String menuText,
+    {Color textColor = AppColors.primaryElementText,
+    Color backGroundColor = AppColors.primaryElement}) {
+  return Container(
+    margin: EdgeInsets.only(right: 20.w),
+    padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 5.h, bottom: 5.h),
+    decoration: BoxDecoration(
+        color: backGroundColor,
+        borderRadius: BorderRadius.circular(7.w),
+        border: Border.all(
+          color: backGroundColor,
+        )),
+    child: _reuseableText(
+      menuText,
+      color: textColor,
+      fontWeight: FontWeight.bold,
+      fontSize: 15,
+    ),
+  );
+}

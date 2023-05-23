@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:udemy/global.dart';
 import 'package:udemy/view/screens/appliction_screen/application_screen_body.dart';
 import 'common/values/colors.dart';
 import 'bloc_provider.dart';
@@ -9,7 +10,7 @@ import 'view/screens/register_screen/screens/register_screen_body.dart';
 import 'view/screens/sign_in_screen/screen/sign_in.dart';
 
 Future<void> main() async {
-  //Global.storageService.init();
+  Global.storageService.init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());

@@ -5,7 +5,6 @@ import 'package:udemy/common/values/colors.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_bloc.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_state.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/widget/home_page_widgets.dart';
-import 'package:udemy/view/screens/home/bloc_home/home_page_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold, top: 5),
                 SizedBox(height: 20.h),
                 buildTextFieldSearch(),
-                silderView(context, state as HomePageState)
+                silderView(context, state),
               ],
             ),
           );

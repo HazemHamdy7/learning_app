@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy/constant/utils/assets.dart';
-import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_bloc.dart';
-import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_event.dart';
-import 'package:udemy/view/screens/home/bloc_home/home_page_state.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_state.dart';
 
 import '../../../../../../common/values/colors.dart';
+import '../bloc_home/home_page_bloc.dart';
+import '../bloc_home/home_page_event.dart';
 
 AppBar buildAppBarInHomePage() {
   return AppBar(
@@ -119,7 +119,7 @@ Widget buildTextFieldSearch() {
   );
 }
 
-silderView(BuildContext context, HomePageState state) {
+Widget silderView(BuildContext context, HomePageStates state) {
   return Column(
     children: [
       Container(
@@ -140,11 +140,11 @@ silderView(BuildContext context, HomePageState state) {
       Container(
         child: DotsIndicator(
           dotsCount: 3,
-          position: 1,
+          position: state.index.toDouble(),
           decorator: DotsDecorator(
-              color: AppColors.primaryThreeElementText,
-              size: const Size.square(5.0),
-              activeSize: const Size(17.0, 5.0),
+              activeColor: AppColors.primaryElement,
+              size: const Size.square(7.0),
+              activeSize: const Size(18.0, 7.0),
               activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
               )),

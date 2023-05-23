@@ -137,18 +137,16 @@ Widget silderView(BuildContext context, HomePageStates state) {
           ],
         ),
       ),
-      Container(
-        child: DotsIndicator(
-          dotsCount: 3,
-          position: state.index.toDouble(),
-          decorator: DotsDecorator(
-              activeColor: AppColors.primaryElement,
-              size: const Size.square(7.0),
-              activeSize: const Size(18.0, 7.0),
-              activeShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
-              )),
-        ),
+      DotsIndicator(
+        dotsCount: 3,
+        position: state.index.toDouble(),
+        decorator: DotsDecorator(
+            activeColor: AppColors.primaryElement,
+            size: const Size.square(7.0),
+            activeSize: const Size(18.0, 7.0),
+            activeShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            )),
       )
     ],
   );

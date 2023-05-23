@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy/common/values/colors.dart';
-import 'package:udemy/constant/utils/assets.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_bloc.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_state.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/widget/home_page_widgets.dart';
-
-import '../../../../welcome_screen/widget/custom_text_in_bording.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

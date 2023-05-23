@@ -21,4 +21,10 @@ class AssetsData {
   static const artView = 'assets/icons/art.png';
   static const image1 = 'assets/icons/Image1.png';
   static const image2 = 'assets/icons/Image2.png';
+
+  //? Profile page
+
+  static const morevertical = 'assets/icons/more-vertical.png';
+  static const headpic = 'assets/icons/headpic.png';
+  static const edit3 = 'assets/icons/edit_3.png';
 }

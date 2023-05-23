@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/profile/screen/profile_page.dart';
 
 import '../../../../common/values/colors.dart';
 import '../../../../constant/utils/assets.dart';
@@ -12,7 +13,7 @@ Widget buildPage(int index) {
     const Center(child: Text("Searsh")),
     const Center(child: Text("Course")),
     const Center(child: Text("Chat")),
-    const Center(child: Text("Profile")),
+    const ProfilePage(),
   ];
   return widget[index];
 }
@@ -21,8 +22,8 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Home',
     icon: SizedBox(
-      width: 15.w,
-      height: 15.h,
+      width: 12.w,
+      height: 12.h,
       child: Image.asset(AssetsData.home),
     ),
     activeIcon: Image.asset(
@@ -33,7 +34,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Search',
     icon: SizedBox(
-        width: 15.w, height: 15.h, child: Image.asset(AssetsData.search)),
+        width: 12.w, height: 12.h, child: Image.asset(AssetsData.search)),
     activeIcon: Image.asset(
       AssetsData.search,
       color: AppColors.primaryElement,
@@ -42,7 +43,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Application',
     icon: SizedBox(
-        width: 15.w, height: 15.h, child: Image.asset(AssetsData.play)),
+        width: 12.w, height: 12.h, child: Image.asset(AssetsData.play)),
     activeIcon: Image.asset(
       AssetsData.play,
       color: AppColors.primaryElement,
@@ -51,7 +52,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Chat',
     icon: SizedBox(
-        width: 15.w, height: 15.h, child: Image.asset(AssetsData.chat)),
+        width: 12.w, height: 12.h, child: Image.asset(AssetsData.chat)),
     activeIcon: Image.asset(
       AssetsData.chat,
       color: AppColors.primaryElement,
@@ -60,7 +61,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Profile',
     icon: SizedBox(
-        width: 15.w, height: 15.h, child: Image.asset(AssetsData.profile)),
+        width: 12.w, height: 12.h, child: Image.asset(AssetsData.profile)),
     activeIcon: Image.asset(
       AssetsData.profile,
       color: AppColors.primaryElement,

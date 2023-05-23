@@ -181,9 +181,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reuseableText("Choose your course"),
+            reuseableText("Choose your course"),
             GestureDetector(
-              child: _reuseableText("See all",
+              child: reuseableText("See all",
                   color: AppColors.primaryThreeElementText, fontSize: 14),
             ),
           ],
@@ -207,18 +207,16 @@ Widget menuView() {
   );
 }
 
-Widget _reuseableText(
+Widget reuseableText(
   String text, {
   Color color = AppColors.primaryText,
   int fontSize = 16,
   FontWeight fontWeight = FontWeight.bold,
 }) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-          color: color, fontSize: fontSize.sp, fontWeight: fontWeight),
-    ),
+  return Text(
+    text,
+    style:
+        TextStyle(color: color, fontSize: fontSize.sp, fontWeight: fontWeight),
   );
 }
 
@@ -235,11 +233,57 @@ Widget _reuseableMenuText(String menuText,
         border: Border.all(
           color: backGroundColor,
         )),
-    child: _reuseableText(
+    child: reuseableText(
       menuText,
       color: textColor,
       fontWeight: FontWeight.bold,
       fontSize: 15,
+    ),
+  );
+}
+
+// text in section grid view in
+Widget courseGride() {
+  return Container(
+    padding: EdgeInsets.all(12.w),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(15.w),
+      image: const DecorationImage(
+        image: AssetImage(
+          AssetsData.image2,
+        ),
+      ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Best course for IT and Engineering",
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          softWrap: false,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: AppColors.primaryElementText,
+            fontWeight: FontWeight.bold,
+            fontSize: 12.sp,
+          ),
+        ),
+        SizedBox(height: 5.h),
+        Text(
+          "Flutter best course",
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          softWrap: false,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: AppColors.primaryFourElementText,
+            fontWeight: FontWeight.normal,
+            fontSize: 10.sp,
+          ),
+        ),
+      ],
     ),
   );
 }

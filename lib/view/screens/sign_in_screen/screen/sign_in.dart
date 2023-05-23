@@ -96,7 +96,9 @@ class _SignInScreenState extends State<SignInScreen> {
                             SizedBox(height: 70.h),
                             CustomButtonLogin(
                               func: () {
-                                //   Navigator.of(context).pushNamed('ApplicationHome');
+                                Navigator.of(context).pushNamedAndRemoveUntil(
+                                    "ApplicationHome", (route) => false);
+                                //TODO  i need to fixed navigator when Sign in controller
                                 SignInController(context: context)
                                     .handleSignIn("email");
                               },

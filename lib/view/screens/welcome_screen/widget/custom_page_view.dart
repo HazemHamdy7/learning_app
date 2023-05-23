@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../common/values/constants.dart';
-import '../../../../global.dart';
 import 'custom_bottom_InBoroding.dart';
 import 'custom_text_in_bording.dart';
 
@@ -49,9 +47,8 @@ class CustomPageView extends StatelessWidget {
                   duration: const Duration(microseconds: 500),
                   curve: Curves.decelerate);
             } else {
-              Global.storageService
-                  .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
-
+              // Global.storageService
+              //     .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_TIME, true);
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("signIn", (route) => false);
             }

@@ -22,8 +22,8 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Home',
     icon: SizedBox(
-      width: 12.w,
-      height: 12.h,
+      width: 15.w,
+      height: 15.h,
       child: Image.asset(AssetsData.home),
     ),
     activeIcon: Image.asset(
@@ -34,7 +34,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Search',
     icon: SizedBox(
-        width: 12.w, height: 12.h, child: Image.asset(AssetsData.search)),
+        width: 15.w, height: 15.h, child: Image.asset(AssetsData.search)),
     activeIcon: Image.asset(
       AssetsData.search,
       color: AppColors.primaryElement,
@@ -43,7 +43,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Application',
     icon: SizedBox(
-        width: 12.w, height: 12.h, child: Image.asset(AssetsData.play)),
+        width: 15.w, height: 15.h, child: Image.asset(AssetsData.play)),
     activeIcon: Image.asset(
       AssetsData.play,
       color: AppColors.primaryElement,
@@ -52,7 +52,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Chat',
     icon: SizedBox(
-        width: 12.w, height: 12.h, child: Image.asset(AssetsData.chat)),
+        width: 15.w, height: 15.h, child: Image.asset(AssetsData.chat)),
     activeIcon: Image.asset(
       AssetsData.chat,
       color: AppColors.primaryElement,
@@ -61,7 +61,7 @@ var bottomTabs = [
   BottomNavigationBarItem(
     label: 'Profile',
     icon: SizedBox(
-        width: 12.w, height: 12.h, child: Image.asset(AssetsData.profile)),
+        width: 15.w, height: 15.h, child: Image.asset(AssetsData.profile)),
     activeIcon: Image.asset(
       AssetsData.profile,
       color: AppColors.primaryElement,

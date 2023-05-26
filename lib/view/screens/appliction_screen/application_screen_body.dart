@@ -28,7 +28,7 @@ class _ApplicationBodyState extends State<ApplicationBody> {
             child: Scaffold(
               body: buildPage(state.index),
               bottomNavigationBar: Container(
-                width: 375.w,
+                width: 300.w,
                 height: 63.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(

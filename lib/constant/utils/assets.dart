@@ -28,4 +28,5 @@ class AssetsData {
   static const headpic = 'assets/icons/headpic.png';
   static const edit3 = 'assets/icons/edit_3.png';
   static const settings = 'assets/icons/settings.png';
+  static const logout = 'assets/icons/Logout.png';
 }

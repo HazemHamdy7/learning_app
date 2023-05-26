@@ -71,8 +71,7 @@ Widget buildListView(BuildContext context) {
           imageInfo.length,
           (index) => GestureDetector(
                 onTap: () {
-                  print("=========tap-=-=====");
-                  //? Navigator.of(context).pushNamed(AppRoutes.SETTINGS);
+                  Navigator.of(context).pushNamed(AppRoutes.SETTINGS);
                 },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 15.h),

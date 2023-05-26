@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:udemy/common/routes/routes.dart';
 
 import '../../../../../../common/values/colors.dart';
 import '../../../../../../constant/utils/assets.dart';
@@ -58,15 +59,21 @@ Widget profileIconAndEditButton() {
 var imageInfo = <String, String>{
   "Settings": "settings.png",
   "Payment details": "credit-card.png",
-  "Love": "award.png",
+  "Love": "heart(1).png",
+  "Achievment": "award.png",
+  "Reminders": "cube.png",
 };
 
-Widget buildListView() {
+Widget buildListView(BuildContext context) {
   return Column(
     children: [
       ...List.generate(
           imageInfo.length,
           (index) => GestureDetector(
+                onTap: () {
+                  print("=========tap-=-=====");
+                  //? Navigator.of(context).pushNamed(AppRoutes.SETTINGS);
+                },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 15.h),
                   child: Row(

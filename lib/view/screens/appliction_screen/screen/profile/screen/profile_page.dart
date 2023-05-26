@@ -23,11 +23,12 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: 30.h),
               profileIconAndEditButton(),
-              SizedBox(width: 15.w),
+              SizedBox(height: 40.h),
               Padding(
                 padding: EdgeInsets.only(left: 25.w),
-                child: buildListView(),
+                child: buildListView(context),
               ),
             ],
           ),

@@ -4,6 +4,8 @@ import 'package:udemy/common/routes/routes.dart';
 import 'package:udemy/view/screens/appliction_screen/application_screen_body.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_bloc.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/screen/home_page.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/profile/screen/setting/bloc/settings_bloc.dart';
+import 'package:udemy/view/screens/appliction_screen/screen/profile/screen/setting/setting._page.dart';
 import 'package:udemy/view/screens/register_screen/bloc/register_bloc.dart';
 import 'package:udemy/view/screens/sign_in_screen/bloc/signin_bloc.dart';
 import 'package:udemy/view/screens/sign_in_screen/screen/sign_in.dart';
@@ -51,6 +53,13 @@ class AppPages {
         page: const HomePage(),
         bloc: BlocProvider(
           create: (_) => HomePageBlocs(),
+        ),
+      ),
+      PageEntity(
+        route: AppRoutes.SETTINGS,
+        page: const SettingsPage(),
+        bloc: BlocProvider(
+          create: (_) => SettingsBlocs(),
         ),
       ),
     ];

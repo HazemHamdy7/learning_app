@@ -27,4 +27,5 @@ class AssetsData {
   static const morevertical = 'assets/icons/more-vertical.png';
   static const headpic = 'assets/icons/headpic.png';
   static const edit3 = 'assets/icons/edit_3.png';
+  static const settings = 'assets/icons/settings.png';
 }

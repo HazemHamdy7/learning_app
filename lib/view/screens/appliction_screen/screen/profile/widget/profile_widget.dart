@@ -53,3 +53,48 @@ Widget profileIconAndEditButton() {
         width: 25.w, height: 25.h, image: const AssetImage(AssetsData.edit3)),
   );
 }
+
+// setting section botton
+var imageInfo = <String, String>{
+  "Settings": "settings.png",
+  "Payment details": "credit-card.png",
+  "Love": "award.png",
+};
+
+Widget buildListView() {
+  return Column(
+    children: [
+      ...List.generate(
+          imageInfo.length,
+          (index) => GestureDetector(
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 15.h),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(7.0),
+                        width: 40.w,
+                        height: 40.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.w),
+                          color: AppColors.primaryElement,
+                        ),
+                        child: Image.asset(
+                            "assets/icons/${imageInfo.values.elementAt(index)}"),
+                      ),
+                      SizedBox(width: 15.w),
+                      Text(
+                        imageInfo.keys.elementAt(index),
+                        style: TextStyle(
+                          color: AppColors.primaryText,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ))
+    ],
+  );
+}

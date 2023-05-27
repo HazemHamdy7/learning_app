@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../common/values/constants.dart';
+import '../../../../global.dart';
 import 'custom_bottom_InBoroding.dart';
 import 'custom_text_in_bording.dart';
 

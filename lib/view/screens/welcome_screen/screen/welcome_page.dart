@@ -34,7 +34,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   onPageChanged: (index) {
                     state.page = index;
                     BlocProvider.of<WelcomeBloc>(context).add(WelcomeEvent());
-                    debugPrint('ondwx============ $index');
                   },
                   children: [
                     CustomPageView(

@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../bloc/signin_bloc.dart';
 import '../bloc/signin_event.dart';
 import '../bloc/signin_state.dart';
@@ -20,6 +22,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(
@@ -44,7 +47,30 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CustomIconLogin(iconName: "google", onTap: () {}),
+                            CustomIconLogin(
+                                iconName: "google",
+                                onTap: () {
+                                  print("==============Tap=============");
+                                  Future<void> _handleGoogleSignIn() async {
+                                    try {
+                                      final GoogleSignInAccount? googleUser =
+                                          await _googleSignIn.signIn();
+                                      final GoogleSignInAuthentication
+                                          googleAuth =
+                                          await googleUser!.authentication;
+
+                                      final OAuthCredential credential =
+                                          GoogleAuthProvider.credential(
+                                        accessToken: googleAuth.accessToken,
+                                        idToken: googleAuth.idToken,
+                                      );
+
+                                      // Use the credential to authenticate with your Firebase account
+                                    } catch (e) {
+                                      print('Error signing in with Google: $e');
+                                    }
+                                  }
+                                }),
                             CustomIconLogin(iconName: "apple", onTap: () {}),
                             CustomIconLogin(iconName: "facebook", onTap: () {}),
                           ],

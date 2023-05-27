@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:udemy/common/values/colors.dart';
 
+import '../../../../../../../../common/widgets/besa_text_widget.dart';
 import '../../../../../../../../constant/utils/assets.dart';
 
 AppBar buildAppbarSettingPage() {
   return AppBar(
-    title: Container(
-      child: Text(
-        "Settings",
-        style: TextStyle(
-          color: AppColors.primaryText,
-          fontWeight: FontWeight.bold,
-          fontSize: 16.sp,
-        ),
-      ),
-    ),
+    title: Container(child: reuseableText("Settings")),
   );
 }
 

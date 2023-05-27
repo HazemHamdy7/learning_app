@@ -8,6 +8,8 @@ import 'package:udemy/view/screens/appliction_screen/screen/profile/screen/setti
 
 import '../../../../../../../../common/routes/names.dart';
 import '../../../../../../../../global.dart';
+import '../../../../../bloc/app_bloc.dart';
+import '../../../../../bloc/app_event.dart';
 import '../bloc/settings_bloc.dart';
 import '../widget/setting_widget.dart';
 
@@ -20,6 +22,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   void removeUserData() {
+    context.read<AppBlocs>().add(TriggerAppEvent(0));
     Navigator.of(context)
         .pushNamedAndRemoveUntil(AppRoutes.SIGN_IN, (route) => false);
     Global.storageService.remove(AppConstants.STORAGE_USER_TOKEN_KEY);

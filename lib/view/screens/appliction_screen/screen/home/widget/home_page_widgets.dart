@@ -6,6 +6,7 @@ import 'package:udemy/constant/utils/assets.dart';
 import 'package:udemy/view/screens/appliction_screen/screen/home/bloc_home/home_page_state.dart';
 
 import '../../../../../../common/values/colors.dart';
+import '../../../../../../common/widgets/besa_text_widget.dart';
 import '../bloc_home/home_page_bloc.dart';
 import '../bloc_home/home_page_event.dart';
 
@@ -179,7 +180,7 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            reuseableText("Choose your course"),
+            reuseableText("Choose your course", fontSize: 18),
             GestureDetector(
               child: reuseableText("See all",
                   color: AppColors.primaryThreeElementText, fontSize: 14),
@@ -202,19 +203,6 @@ Widget menuView() {
         ),
       )
     ],
-  );
-}
-
-Widget reuseableText(
-  String text, {
-  Color color = AppColors.primaryText,
-  int fontSize = 16,
-  FontWeight fontWeight = FontWeight.bold,
-}) {
-  return Text(
-    text,
-    style:
-        TextStyle(color: color, fontSize: fontSize.sp, fontWeight: fontWeight),
   );
 }
 

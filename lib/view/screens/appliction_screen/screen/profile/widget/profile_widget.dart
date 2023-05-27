@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:udemy/common/routes/routes.dart';
 
 import '../../../../../../common/values/colors.dart';
+import '../../../../../../common/widgets/besa_text_widget.dart';
 import '../../../../../../constant/utils/assets.dart';
 
 AppBar buildAppbarProfilePage() {
@@ -18,14 +19,7 @@ AppBar buildAppbarProfilePage() {
             height: 12.w,
             child: Image.asset(AssetsData.menu),
           ),
-          Text(
-            "Profile",
-            style: TextStyle(
-              color: AppColors.primaryText,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp,
-            ),
-          ),
+          reuseableText("Profile", fontSize: 20),
           SizedBox(
             width: 24.w,
             height: 24.w,
